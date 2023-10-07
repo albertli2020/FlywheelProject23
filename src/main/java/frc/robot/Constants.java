@@ -4,6 +4,8 @@
 
 package frc.robot;
 
+
+
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
  * constants. This class should not be used for any other purpose. All constants should be declared
@@ -12,4 +14,37 @@ package frc.robot;
  * <p>It is advised to statically import this class (or one of its inner classes) wherever the
  * constants are needed, to reduce verbosity.
  */
-public final class Constants {}
+public final class Constants {
+    public static final int leftFlyWheelID = 16;
+    public static final int rightFlyWheelID = 17;
+    
+    public static final int joystickPort = 2;
+    public static final int portThree = 3;
+    public static final int portFour = 4;
+
+    public static final int USBPort = 0;
+
+    public static final int encoderTicks = 4096;
+    public static final class leftFlyWheelPIDConstants{
+        public static double kp = 0.07;
+        public static double ki = 0;
+        public static double kd = 0;
+    }
+    public static final class rightFlyWheelPIDConstants{
+        public static double kp = 0.07;
+        public static double ki = 0;
+        public static double kd = 0;
+    }
+    public static final class leftFlyWheelFF{
+        public static final double kS = 0.41733;
+        public static final double kV = 0.4025;
+        public static final double kA = 0.046839;
+    }
+    public static final class rightFlyWheelFF{
+        public static final double kS = 0.41733;
+        public static final double kV = 0.4025;
+        public static final double kA = 0.046839;
+    }
+
+    
+}
