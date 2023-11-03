@@ -25,7 +25,7 @@ public class Shooter extends SubsystemBase {
   private PIDController rightPID = new PIDController(Constants.rightFlyWheelPIDConstants.kp, Constants.rightFlyWheelPIDConstants.ki, Constants.rightFlyWheelPIDConstants.kd, 0.01);
   private SimpleMotorFeedforward leftFF = new SimpleMotorFeedforward(Constants.leftFlyWheelFF.kS, Constants.leftFlyWheelFF.kV, Constants.leftFlyWheelFF.kA);
   private SimpleMotorFeedforward rightFF = new SimpleMotorFeedforward(Constants.rightFlyWheelFF.kS, Constants.rightFlyWheelFF.kV, Constants.rightFlyWheelFF.kA);
-  
+
   public Shooter() {
     leftFlyWheel.configFactoryDefault();
     rightFlyWheel.configFactoryDefault();
@@ -38,7 +38,7 @@ public class Shooter extends SubsystemBase {
 
 
     leftPID.setTolerance(0.05);
-    rightPID.setTolerance(0.5);
+    rightPID.setTolerance(0.05);
   }
 
 
@@ -64,14 +64,16 @@ public class Shooter extends SubsystemBase {
 
   public void resetEncoder(){
     leftFlyWheel.setSelectedSensorPosition(0);
+    rightFlyWheel.setSelectedSensorPosition(0);
   }
 
 
   @Override
   public void periodic() {
-    if(RobotContainer.getJoystick().getRawButtonPressed(1)){
-      setSpeedPID(0.4);
+    if(RobotContainer.getJoystick().getRawButtonPressed(2)){
+      setSpeedPID(240);
     }
+    
     // This method will be called once per scheduler run
   }
 }

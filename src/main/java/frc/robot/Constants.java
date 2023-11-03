@@ -26,12 +26,12 @@ public final class Constants {
 
     public static final int encoderTicks = 4096;
     public static final class leftFlyWheelPIDConstants{
-        public static double kp = 0.07;
+        public static double kp = 0.007;
         public static double ki = 0;
         public static double kd = 0;
     }
     public static final class rightFlyWheelPIDConstants{
-        public static double kp = 0.07;
+        public static double kp = 0.007;
         public static double ki = 0;
         public static double kd = 0;
     }
